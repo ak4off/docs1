@@ -64,14 +64,14 @@ plugins:
       separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   - minify:
       minify_html: true
-  # - git-revision-date-localized:
-  #     enable_creation_date: true
-  #     type: date
-  #     fallback_to_build_date: true
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: date
+      fallback_to_build_date: true
+  - git-authors
   # - git-committers:
   #     repository: Speech-Lab-IITM/labdocs
   #     branch: master
-  # - git-authors
 
 
 # Hooks
