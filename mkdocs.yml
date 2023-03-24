@@ -190,3 +190,6 @@ nav:
   - Data:
     - ASR Challenges: data_docs/challenges.md
     - Additional data: data_docs/additional_data.md
+  - Documentation:
+    - Research: documentation/research.md
+    - Miscellaneous: documentation/misc.md
