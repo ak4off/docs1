@@ -36,13 +36,19 @@ In case of a service failure, the API returns a JSON response with the following
 
 ### Language pairs supported by `iiit-h`
 
+- [x] English --> Gujarati
 - [x] English --> Hindi
-- [x] English --> Marathi
+- [x] English --> Punjabi
+- [x] English --> Tamil
 - [x] English --> Telugu
-- [x] Hindi --> English
+- [x] Hindi --> Bangla
 - [x] Hindi --> Gujarati
-- [x] Hindi --> Marathi
+- [x] Hindi --> Punjabi
+- [x] Hindi --> Tamil
 - [x] Hindi --> Telugu
+- [x] Marathi --> English
+- [x] Marathi --> Hindi
+- [x] Gujarati --> Hindi
 
 ### Language pairs supported by `iitb`
 
@@ -84,7 +90,7 @@ Every possible set of language pairs from the below set is supported by the `met
 === "cURL"
 
     ``` sh
-    curl -v -X POST -F 'src_language=english' -F 'tgt_language=marathi' \
+    curl -v -X POST -F 'src_language=english' -F 'tgt_language=telugu' \
     -F 'transcript=Welcome to our lab' -F 'translator_choice=iiit-h' \
     https://asr.iitm.ac.in/test1/translate
     ```
