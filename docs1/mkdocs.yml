@@ -1,0 +1,195 @@
+site_name: Speech Lab Docs
+
+
+# https://squidfunk.github.io/mkdocs-material/reference/
+# admonitions
+# code blocks
+# content tabs
+# data tables
+# formatting
+# icons, emojis
+# lists
+
+theme:
+  name: material
+  nav_style: dark
+  highlightjs: true
+  hljs_languages:
+      - yaml
+      - rust
+      - bash
+      - sh
+      - zsh
+      - py
+      - python-repl
+      - python
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - content.tabs.link #
+    - content.tooltips
+    - header.autohide
+    - navigation.expand
+    # - navigation.footer #
+    - navigation.indexes
+    - navigation.instant #
+    # - navigation.prune #
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky #
+    - navigation.top
+    - navigation.tracking
+    - navigation.path
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    # - toc.integrate #
+  palette:
+    - scheme: default
+      primary: green #indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: green #indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/favicon.png
+  icon:
+    logo: logo
+    admonition:
+      tip: fontawesome/solid/microphone
+      example: material/api
+      note: fontawesome/solid/note-sticky
+      abstract: fontawesome/solid/book
+      info: material/qrcode-scan
+      success: material/rocket-launch
+      question: fontawesome/solid/circle-question
+      warning: fontawesome/solid/triangle-exclamation
+      failure: fontawesome/solid/bomb
+      danger: fontawesome/solid/skull
+      bug: fontawesome/solid/robot
+      quote: fontawesome/solid/quote-left
+
+# Plugins
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - minify:
+      minify_html: true
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: date
+      fallback_to_build_date: true
+  - offline:
+      enabled: !ENV [OFFLINE, false]
+
+
+# Hooks
+# hooks:
+#   - material/.overrides/hooks/translations.py
+
+# Repository
+repo_name:  Speech-Lab-IITM/docs 
+repo_url: https://github.com/Speech-Lab-IITM/docs
+
+# Customization
+extra:
+  annotate:
+    json: [.s2]
+  analytics:
+    provider: google
+    property: !ENV GOOGLE_ANALYTICS_KEY
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Speech-Lab-IITM
+    # - icon: fontawesome/brands/gitter
+    #   link: https://gitter.im/squidfunk/mkdocs-material
+    # - icon: fontawesome/brands/docker
+    #   link: https://hub.docker.com/r/squidfunk/mkdocs-material/
+    # - icon: fontawesome/brands/python
+    #   link: https://pypi.org/project/mkdocs-material/
+    # - icon: fontawesome/brands/mastodon
+    #   link: https://fosstodon.org/@squidfunk
+    - icon: fontawesome/brands/slack
+      link: https://speech-lab-iitm.slack.com
+    # - icon: fontawesome/brands/linkedin
+    #   link: https://www.linkedin.com/company/speech-lab-iitm/
+    # - icon: fontawesome/brands/twitter
+    #   link: https://twitter.com/iitmspeech
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:speechiitm@gmail.com
+  generator: false
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      title: On this page
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:materialx.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+nav:
+  - Home: index.md
+  - API Reference:
+    - ASR (Speech-to-Text): api_docs/asr.md
+    - MT (Text-to-Text): api_docs/mt.md
+    - TTS (Text-to-Speech): api_docs/tts.md
+    - V2V (Video Interpolation): api_docs/v2v.md
+  - Models:
+    - End-to-End supervised models: model_docs/supervised.md
+    - SSL models: model_docs/ssl.md
+    - Adapted models: model_docs/adapted.md
+  - Data:
+    - ASR Challenges: data_docs/challenges.md
+    - Additional data: data_docs/additional_data.md
+  - Documentation:
+    - Research: documentation/research.md
+    - Miscellaneous: documentation/misc.md
